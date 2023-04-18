@@ -7,6 +7,10 @@
 - name: Instalando arquivo zabbix-release_6.4-1+debian11_all.deb
   apt:
     deb: /tmp/zabbix-release_6.4-1+debian11_all.deb
+  become: true
+
+- name: Atualizar lista de pacotes
+  apt:
     update_cache: yes
   become: true
 

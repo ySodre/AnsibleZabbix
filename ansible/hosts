@@ -1,2 +1,2 @@
 [zabbix]
-192.168.10.105 ansible_user=vagrant ansible_ssh_private_key_file=/home/vagrant/.ssh/key
+192.168.10.101 ansible_user=vagrant  ansible_password=vagrant ansible_sudo_pass=vagrant

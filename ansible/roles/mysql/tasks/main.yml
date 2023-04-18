@@ -1,0 +1,15 @@
+---
+# tasks file for mysql
+- name: Instalando banco de dados
+  apt:
+    name: ['mariadb-server', 'python3-mysqldb']
+    state: latest
+  become: true
+
+- name: Habilitando o serviço
+  service:
+    name: mariadb
+    enabled: yes
+  become: true
+
+

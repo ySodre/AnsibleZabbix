@@ -2,4 +2,3 @@
 - hosts: zabbix
   roles:
     - zabbix
-#    - mysql

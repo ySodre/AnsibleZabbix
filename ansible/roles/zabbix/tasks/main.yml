@@ -4,20 +4,22 @@
     url: https://repo.zabbix.com/zabbix/6.4/debian/pool/main/z/zabbix-release/zabbix-release_6.4-1+debian11_all.deb
     dest: /tmp
 
+- name: Atualizando repositório
+  apt:
+    update_cache: yes
+  become: true
+
 - name: Instalando arquivo zabbix-release_6.4-1+debian11_all.deb
   apt:
     deb: /tmp/zabbix-release_6.4-1+debian11_all.deb
   become: true
 
-- name: Atualizar lista de pacotes
-  apt:
-    update_cache: yes
-  become: true
 
-- name: 'Instalando: zabbix-server-mysq, zabbix-frontend-php, zabbix-apache-conf, zabbix-sql-scripts e zabbix-agent'
+- name: 'Instalando: zabbix-server-mysql, zabbix-frontend-php, zabbix-sql-scripts e zabbix-agent'
   apt:
     name: ['zabbix-server-mysql', 'zabbix-frontend-php', 'zabbix-apache-conf', 'zabbix-sql-scripts', 'zabbix-agent']
-    state: present
+    update_cache: yes
+    state: latest
   become: true
 
 - name: Habilitando zabbix-server
@@ -47,8 +49,8 @@
 - name: Criando usuários zabbix para o banco zabbix
   mysql_user:
     login_user: root
-    name: zabbix
-    password: zabbix
+    name:  "{{ zabbix_db_user }}"
+    password: "{{ zabbix_db_pass }}"
     priv: zabbix.*:ALL
     state: present
     host: localhost

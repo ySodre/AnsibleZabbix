@@ -118,7 +118,7 @@ DBName=zabbix
 # Default:
 # DBUser=
 
-DBUser=zabbix
+DBUser={{ zabbix_db_user }}
 
 ### Option: DBPassword
 #       Database password.
@@ -126,7 +126,7 @@ DBUser=zabbix
 #
 # Mandatory: no
 # Default:
-DBPassword=zabbix
+DBPassword={{ zabbix_db_pass }}
 
 ### Option: DBSocket
 #       Path to MySQL socket.
@@ -672,7 +672,7 @@ LogSlowQueries=3000
 ### Option: Include
 #       You may include individual files or all files in a directory in the configuration file.       
 #       Installing Zabbix will create include directory in /usr/local/etc, unless modified during the 
-compile time.
+# compile time.
 #
 # Mandatory: no
 # Default:
@@ -911,7 +911,7 @@ StatsAllowedIP=127.0.0.1
 
 ### Option: VaultToken
 #       Vault authentication token that should have been generated exclusively for Zabbix server with 
-read only permission
+#read only permission
 #       to paths specified in Vault macros and read only permission to path specified in optional VaultDBPath
 #       configuration parameter.
 #       It is an error if VaultToken and VAULT_TOKEN environment variable are defined at the same time.
@@ -923,7 +923,7 @@ read only permission
 
 ### Option: VaultURL
 #       Vault server HTTP[S] URL. System-wide CA certificates directory will be used if SSLCALocation 
-is not specified.
+#is not specified.
 #
 # Mandatory: no
 # Default:
@@ -945,7 +945,7 @@ is not specified.
 
 ### Option: VaultTLSCertFile
 #       Name of the SSL certificate file used for client authentication. The certificate file must be 
-in PEM1 format.
+#in PEM1 format.
 #       If the certificate file contains also the private key, leave the SSL key file field empty. The directory
 #       containing this file is specified by configuration parameter SSLCertLocation.
 #
@@ -955,7 +955,7 @@ in PEM1 format.
 
 ### Option: VaultTLSKeyFile
 #       Name of the SSL private key file used for client authentication. The private key file must be 
-in PEM1 format.
+#in PEM1 format.
 #       The directory containing this file is specified by configuration parameter SSLKeyLocation.    
 #
 # Mandatory: no

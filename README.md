@@ -1,6 +1,6 @@
-# Título do projeto
+# Ansible - Provisionamento Zabbix Server
 
-Um parágrafo da descrição do projeto vai aqui
+Criei um playbook utilizando o Ansible para configurar um Zabbix Server de maneira automática.
 
 ## 🚀 Começando
 
@@ -10,7 +10,7 @@ Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar 
 
 ### 📋 Pré-requisitos
 
-De que coisas você precisa para instalar o software e como instalá-lo?
+Você vai precisar de uma máquina com o ansible instalado para rodar o playbook.
 
 ```
 Dar exemplos
